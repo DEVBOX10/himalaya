@@ -78,6 +78,14 @@ tracing = "0.1"
 url = "2.2"
 uuid = { version = "0.8", features = ["v4"] }
 
+[[example]]
+name = "keyring"
+required-features = ["imap", "keyring"]
+
+[[bin]]
+name = "keyring"
+required-features = ["imap", "keyring"]
+
 [patch.crates-io]
 # IMAP
 imap-next = { git = "https://github.com/duesee/imap-next" }

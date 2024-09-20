@@ -1,6 +1,6 @@
-mod check_up;
-mod configure;
-mod list;
+pub mod check_up;
+pub mod configure;
+pub mod list;
 
 use clap::Subcommand;
 use color_eyre::Result;
