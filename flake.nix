@@ -154,8 +154,6 @@
 
               ${pkgs.zip}/bin/zip -r himalaya.zip himalaya* share
               mv himalaya.zip ../
-
-              mv share ../
             '';
           };
         in
