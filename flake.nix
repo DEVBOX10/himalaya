@@ -48,6 +48,20 @@
               };
           };
 
+          armv7-linux = {
+            rustTarget = "armv7-unknown-linux-musleabi";
+            runner = { pkgs, himalaya }: "${pkgs.qemu}/bin/qemu-arm ${himalaya}";
+            mkPackage = { pkgs, ... }: package:
+              let
+                inherit (pkgs.pkgsCross.raspberryPi) stdenv;
+                cc = "${stdenv.cc}/bin/${stdenv.cc.targetPrefix}cc";
+              in
+              package // {
+                TARGET_CC = cc;
+                CARGO_BUILD_RUSTFLAGS = package.CARGO_BUILD_RUSTFLAGS ++ [ "-Clinker=${cc}" ];
+              };
+          };
+
           x86_64-windows = {
             rustTarget = "x86_64-pc-windows-gnu";
             runner = { pkgs, himalaya }:
