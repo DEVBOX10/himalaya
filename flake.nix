@@ -49,7 +49,7 @@
           };
 
           armv7-linux = {
-            rustTarget = "armv7-unknown-linux-musleabi";
+            rustTarget = "armv7-unknown-linux-musleabihf";
             runner = { pkgs, himalaya }: "${pkgs.qemu}/bin/qemu-arm ${himalaya}";
             mkPackage = { pkgs, ... }: package:
               let

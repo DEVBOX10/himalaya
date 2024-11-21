@@ -10,18 +10,18 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - target: x86_64-linux
-            os: ubuntu-latest
-          - target: aarch64-linux
-            os: ubuntu-latest
+          # - target: x86_64-linux
+          #   os: ubuntu-latest
+          # - target: aarch64-linux
+          #   os: ubuntu-latest
           - target: armv7-linux
             os: ubuntu-latest
-          - target: x86_64-windows
-            os: ubuntu-latest
-          - target: x86_64-darwin
-            os: macos-13
-          - target: aarch64-darwin
-            os: macos-14
+          # - target: x86_64-windows
+          #   os: ubuntu-latest
+          # - target: x86_64-darwin
+          #   os: macos-13
+          # - target: aarch64-darwin
+          #   os: macos-14
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
